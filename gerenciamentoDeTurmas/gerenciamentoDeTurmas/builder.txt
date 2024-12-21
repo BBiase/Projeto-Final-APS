@@ -1,0 +1,11 @@
+#!/bin/bash
+
+# Construir a imagem Docker
+docker-compose build
+
+# Iniciar os containers
+docker-compose up
+
+
+cd C:\Users\Biase\Downloads\gerenciamentoDeTurmas
+docker-compose up --build

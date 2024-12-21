@@ -1,0 +1,24 @@
+CREATE TABLE curso (
+    id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    nome VARCHAR(255) NOT NULL,
+    descricao VARCHAR(255)
+);
+
+CREATE TABLE atividade (
+    id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    nome VARCHAR(255) NOT NULL,
+    descricao VARCHAR(255),
+    data DATE,
+    categoria VARCHAR(255),
+    publicada BOOLEAN DEFAULT FALSE, -- Valor padrão para a coluna publicada
+    curso_id BIGINT,
+    FOREIGN KEY (curso_id) REFERENCES curso(id)
+);
+
+CREATE TABLE foto (
+    id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    url VARCHAR(255) NOT NULL,
+    descricao VARCHAR(255),
+    atividade_id BIGINT,
+    FOREIGN KEY (atividade_id) REFERENCES atividade(id)
+);

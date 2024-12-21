@@ -1,0 +1,18 @@
+version: '3.8'
+
+services:
+  gerenciamento-de-turmas:
+    build:
+      context: .
+    ports:
+      - "8080:8080"
+    environment:
+      TZ: America/Manaus
+      SPRING_DATASOURCE_URL: jdbc:h2:mem:testdb
+      SPRING_DATASOURCE_USERNAME: sa
+      SPRING_DATASOURCE_PASSWORD: 
+    networks:
+      - backend
+
+networks:
+  backend:

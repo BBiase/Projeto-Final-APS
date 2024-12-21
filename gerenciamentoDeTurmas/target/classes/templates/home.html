@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Bem-vindo ao Sistema Acadêmico</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #f9f9f9;
+        }
+        header {
+            background-color: #4CAF50;
+            padding: 20px;
+            text-align: center;
+            color: white;
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            background: #333;
+        }
+        nav a {
+            padding: 14px 20px;
+            display: block;
+            color: white;
+            text-align: center;
+            text-decoration: none;
+        }
+        nav a:hover {
+            background: #4CAF50;
+        }
+        .container {
+            padding: 20px;
+        }
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 16px;
+            font-weight: bold;
+            text-align: center;
+            text-decoration: none;
+            background-color: #4CAF50;
+            color: white;
+            border-radius: 5px;
+            margin: 5px;
+        }
+        .button:hover {
+            background-color: #45a049;
+        }
+        .logout-button {
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 16px;
+            font-weight: bold;
+            text-align: center;
+            text-decoration: none;
+            background-color: #ff5733;
+            color: white;
+            border-radius: 5px;
+            margin: 5px;
+        }
+        .logout-button:hover {
+            background-color: #e94e1b;
+        }
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Bem-vindo ao Sistema Acadêmico!</h1>
+        <p>Gerencie suas atividades, fotos e cursos facilmente.</p>
+    </header>
+    <nav>
+        <a th:href="@{/h2-console}">H2 Console</a>
+        <a href="/swagger-ui/index.html">Swagger UI</a>
+        <a th:href="@{/atividades}">Atividades</a>
+        <a th:href="@{/fotos}">Fotos</a>
+        <a th:href="@{/cursos}">Cursos</a>
+        <a th:href="@{/logout}" class="logout-button">Logout</a>
+    </nav>
+    <div class="container">
+        <h2>Seja produtivo!</h2>
+        <p>Use as ferramentas acima para acessar e gerenciar seu conteúdo acadêmico.</p>
+    </div>
+    <footer>
+        <p>&copy; 2024 Sistema Acadêmico. Todos os direitos reservados.</p>
+    </footer>
+</body>
+</html>

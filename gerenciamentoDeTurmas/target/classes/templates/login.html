@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Login</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to bottom right, #4CAF50, #8BC34A);
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .login-container {
+            background: #fff;
+            padding: 20px 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            max-width: 400px;
+            width: 100%;
+        }
+        .logo {
+            width: 80px; /* Ajuste o tamanho conforme necessário */
+            height: 80px; /* Ajuste o tamanho conforme necessário */
+            object-fit: contain;
+            margin-bottom: 20px;
+        }
+        .error {
+            color: red;
+            font-weight: bold;
+        }
+        input[type="text"], input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            background-color: #4CAF50;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <img src="/images/seu_logo.png" alt="Logo" class="logo"/>
+        <h1>Efetue seu Login</h1>
+        <form method="post" th:action="@{/login}">
+            <div>
+                <label>Username:</label>
+                <input type="text" name="username"/>
+            </div>
+            <div>
+                <label>Password:</label>
+                <input type="password" name="password"/>
+            </div>
+            <div>
+                <button type="submit">Login</button>
+            </div>
+            <div th:if="${param.error}" class="error">
+                <p>Credenciais inválidas, tente novamente.</p>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
